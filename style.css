@@ -1,0 +1,1002 @@
+/* ضبط عام لإلغاء الهوامش الافتراضية وضبط القياسات */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. قفل التمرير العام للمتصفح */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f8fafc;
+  direction: rtl;
+  height: 100vh;
+  overflow: hidden;
+  display: flex; /* يجعل السايد بار والناف بار بجوار بعضهما أفقياً */
+}
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  direction: rtl;
+  background-color: #ffffff;
+  padding: 24px 16px;
+  border-left: 1px solid #e2e8f0;
+  box-sizing: border-box;
+}/* حاوية اللوجو بالكامل (تضع النص وبجانبه المربع الأزرق) */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+/* المربع الأزرق الحامل لصورة العملات البيضاء */
+.logo-icon-box {
+  background-color: #2563eb;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* حجم صورة العملات داخل المربع */
+.logo-icon-box img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* حاوية النصوص */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* كلمة مدبّر */
+.logo-text h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+/* جملة إدارة أموالك بذكاء */
+.logo-text p {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* مسافة بين اللوجو وعناصر القائمة */
+.sidebar-menu {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* تنسيق الزر نفسه */
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* تبدأ العناصر من اليمين */
+  gap: 12px;                   /* مسافة فاصلة بين الأيقونة والنص */
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #64748b;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+/* تأثير التمرير بالماوس */
+.menu-item:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* العنصر النشط (الصفحة الحالية) */
+.menu-item.active {
+  background-color: #eff6ff;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* مقاس أيقونة القائمة */
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.menu-title {
+  font-size: 16px;       /* تحكمي في الحجم بدقة من هنا */
+  font-weight: 600;      /* سمك الخط */
+  color: #36465e;        /* لون رمادي خفيف يناسب عناوين الأقسام */
+  margin: 24px 0 12px 0; /* مسافة أعلى العنوان ليفصله عن القائمة السابقة ومسافة تحته */
+  padding-right: 8px;    /* محاذاة متناسقة مع الأيقونات */
+}
+.top-navbar {
+  width: 100%;
+  height: 70px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 24px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-title-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  background-color: #2563eb; /* خلفية زرقاء تجريبية */
+  border-radius: 6px;
+  padding: 4px;
+}
+/* ضبط الحاوية اليمنى لتكون عناصرها أفقية مع مسافة بينها */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* محاذاة الأيقونة والعناوين بجوار بعض */
+.header-title-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ضبط حجم الأيقونة */
+.header-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* ضبط النصوص وإلغاء المسافات الافتراضية للـ h1 والـ p */
+.header-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.header-subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* تنسيق شارة (متصل) */
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ecfdf5;
+  color: #059669;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* النقطة الخضراء */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+}
+/* ضبط الطرف الأيسر أفقياً */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* أزرار البحث والإشعارات وتحديد حجم الأيقونات */
+.header-action-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.action-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* شارة عدد الإشعارات الحمراء الصغيرة */
+.notification-box .badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+/* تنسيق مستطيل بطاقة المستخدم بحواف دائرية */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 6px 14px 6px 6px; /* مسافة أوسع جهة الكلام لضبط التوازن */
+  border-radius: 10px;        /* حواف دائرية كاملة للمستطيل */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* ظل خفيف جداً يبرز المستطيل */
+  cursor: pointer;
+}
+
+/* محاذاة النصوص جهة اليمين */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.user-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.user-role {
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.2;
+}
+
+/* شكل وأبعاد الصورة الدائرية داخل المستطيل */
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* الحاوية الكبيرة التي تجمع الهيدر والمحتوى بجوار السايد بار */
+.main-content {
+  width: calc(100% - 260px);
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* تعديل عرض الهيدر ليأخذ 100% من الحاوية الجديدة */
+.top-navbar {
+  width: 100%;
+}
+
+/* جسم الصفحة الذي يجمع كل الصفوف تحته */
+.dashboard-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column !important; /* يجبر كل صف على النزول سطر جديد تحت سابقه */
+  gap: 24px;
+  padding: 24px 30px;
+}
+
+/* الصف الرئيسي الذي يجمع اليمين واليسار */
+.content-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  align-items: flex-start;
+}
+
+/* العمود الأيمن (الثلث تقريباً) */
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* العمود الأيسر (الثلثين) */
+.left-column {
+  flex: 2;
+}
+
+/* البطاقة العامة */
+.card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 16px;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.view-all-link {
+  font-size: 12px;
+  color: #64748b;
+  text-decoration: none;
+}
+
+/* --- تنسيقات بطاقة الأنشطة الحديثة --- */
+.activity-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.activity-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border-left: 4px solid transparent;
+}
+
+.activity-blue {
+  background-color: #eff6ff;
+  border-left-color: #3b82f6;
+}
+
+.activity-green {
+  background-color: #f0fdf4;
+  border-left-color: #22c55e;
+}
+
+.activity-badge {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.activity-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap; /* يمنع نزول الكلمات تحت بعضها */
+}
+
+.activity-desc {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+  white-space: nowrap;
+}
+.activity-time {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.activities-link {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #3b82f6;
+  text-decoration: none;
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+/* --- تنسيقات بطاقة الفواتير الشهرية --- */
+.bills-total {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.total-amount {
+  margin: 0;
+  font-size: 26px;
+  color: #0f172a;
+}
+
+.total-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.bills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.bill-item {
+  background-color: #f8fafc;
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+}
+
+.bill-icon {
+  font-size: 20px;
+}
+
+.bill-name {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.bill-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 4px 0;
+}
+
+.bill-due {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.bill-due.due-soon {
+  color: #ef4444;
+}
+
+/* --- تنسيقات جدول المعاملات الكبيرة --- */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: right;
+  table-layout: auto;
+}
+
+.transactions-table th {
+  padding: 12px 10px;
+  font-size: 12px;
+  color: #94a3b8;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.transactions-table td {
+  padding: 12px 10px;
+  font-size: 13px;
+  border-bottom: 1px solid #f8fafc;
+  vertical-align: middle;
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.service-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.primary-text {
+  font-weight: 700;
+  font-size: 13px;
+  color: #1e293b;
+}
+
+.secondary-text {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.category-tag {
+ display: inline-block; 
+ padding: 6px 14px; 
+ border-radius: 20px; 
+  font-size: 12px; 
+ align-items: center; 
+  justify-content: center; 
+  gap: 6px; 
+  font-weight: 600; 
+  white-space: nowrap; 
+ }
+
+.tag-income { background-color: #ecfdf5; color: #10b981; }
+.tag-food { background-color: #fff7ed; color: #f97316; }
+.tag-shopping { background-color: #eff6ff; color: #3b82f6; }
+
+.status-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+.status-completed {
+  background-color: #ecfdf5;
+  color: #10b981;
+}
+
+.amount-text {
+  font-weight: 700;
+  direction: ltr;
+  text-align: left;
+}
+
+.amount-positive { color: #10b981; }
+.amount-negative { color: #0f172a; }
+/* 1. الحاوية العامة لجسم الصفحة */
+.dashboard-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column; /* يرص الكروت فوق والصف السفلي تحتها */
+  gap: 24px;
+}
+
+/* 2. كروت الإحصائيات الثلاثة بالأعلى */
+.cards-grid {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.stat-card {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.card-value {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.card-trend {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.trend-up { color: #10b981; }
+.trend-down { color: #ef4444; }
+
+/* 3. الصف السفلي: تقسيم الثلث والثلثين */
+.content-row {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* العمود الأيمن (الثلث): يضم الأنشطة والفواتير فوق بعض */
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* العمود الأيسر (الثلثين): يضم جدول المعاملات الكبيرة */
+.left-column {
+  flex: 2;
+}
+/* الصف السفلي الكامل */
+.bottom-dashboard-row {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  align-items: flex-start;
+  margin-top: 24px;
+}
+
+/* 1. العمود الأيمن (نظرة عامة على الميزانية) - طويل */
+.budget-overview-col {
+  flex: 1.2;
+  min-height: 480px; /* ديف طويلة تمتد بارتفاع ملحوظ */
+  display: flex;
+  flex-direction: column;
+}
+
+.budget-main-amount {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 6px 0;
+  color: #0f172a;
+}
+
+.budget-progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 12px 0 8px;
+}
+
+.budget-progress-bar {
+  height: 100%;
+  background-color: #3b82f6;
+  border-radius: 8px;
+}
+
+.budget-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.budget-categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.cat-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.cat-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #f1f5f9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cat-fill {
+  height: 100%;
+  border-radius: 6px;
+}
+
+.fill-success { background-color: #10b981; }
+.fill-warning { background-color: #f59e0b; }
+.fill-danger  { background-color: #ef4444; }
+
+/* 2. العمود الأوسط (ديفين فوق بعض بارتفاع 3/4 تقريباً = 360px) */
+.middle-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 380px;
+}
+
+.income-expense-card {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-bars-wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 90px;
+  margin-top: 10px;
+}
+
+.bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar-fill {
+  width: 32px;
+  border-radius: 6px 6px 0 0;
+}
+
+.income-bg { background-color: #10b981; }
+.expense-bg { background-color: #ef4444; }
+
+.bar-lbl {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.account-summary-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.summary-pills {
+  display: flex;
+  gap: 12px;
+}
+
+.summary-pill {
+  flex: 1;
+  background-color: #f8fafc;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.summary-pill span {
+  display: block;
+  font-size: 11px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.text-positive { color: #10b981; font-size: 13px; }
+.text-negative { color: #64748b; font-size: 13px; }
+
+/* 3. العمود الأيسر (الكروت البنكية الدوارة) - ارتفاعه مساوٍ للأوسط */
+.cards-wallet-col {
+  flex: 1;
+  height: 580px;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* بنية دوران الكارت حول محور Y ثلاثي الأبعاد */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 140px;
+  perspective: 1000px; /* تفعيل المنظور ثلاثي الأبعاد */
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* عند المرور على الكارت يدور حول محور Y بمقدار 180 درجة */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; /* يخفي الوجه الخلفي أثناء النظر للوجه الأمامي */
+  border-radius: 12px;
+  background: transparent !important;
+  overflow: hidden;
+}
+
+
+
+/* ظهر الكارت (المقلوب مسبقاً بـ 180 درجة) */
+.flip-card-back {
+   transform: rotateY(180deg); 
+}
+
+
+.cvv-box {
+  align-self: flex-end;
+  background-color: #ffffff;
+  color: #0f172a;
+  padding: 2px 8px;
+  font-size: 10px;
+  border-radius: 4px;
+  margin: 10px 14px 0 0;
+  font-family: monospace;
+}
+
+.activity-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: right;
+}
+/* صندوق الأيقونة الصغير (على اليمين) */
+.activity-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* يمنع انضغاط المربع نهائياً */
+}
+
+/* لون خلفية نشاط الحساب (أزرق فاتح) */
+.icon-box-blue {
+  background-color: #dbeafe;
+}
+
+/* لون خلفية نشاط البطاقة (أخضر فاتح) */
+.icon-box-green {
+  background-color: #dcfce7;
+}
+
+/* حجم الصورة بداخل الصندوق */
+.activity-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+activity-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+.bill-icon img{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.table-header-row th{
+  color: #4d596a;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 14px;
+  text-align: right;
+  border-bottom: 1px solid #f1f5f9;
+}
+.service-icon img{
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+  ;
+}
+.icon-food{
+  background-color: #fee2e2;
+  border-radius: 50%;
+}
+.spane{
+  object-fit: contain;
+  width: auto;
+  border-radius: 10px;
+  background-color: rgb(247, 229, 229);
+  gap: 8px;
+}
+.custum-chart-img{
+width: 100%;
+height: auto;
+display: block;
+border-radius: 8px;
+}
+
+.card-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* border-radius: 12px; */
+  display: block;
+}
+
+/* ===================================================
+   Responsive Media Queries (التجاوب مع الشاشات)
+   =================================================== */
+
+/* للشاشات المتوسطة والأجهزة اللوحية (Tablets - أقل من 992px) */
+@media (max-width: 992px) {
+  /* فك الصف الرئيسي ليصبح عمودياً */
+  .content-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* جعل العمودين الأيمن والأيسر بعرض كامل */
+  .right-column,
+  .left-column {
+    width: 100%;
+  }
+
+  /* إمكانية تمرير جدول المعاملات أفقياً بسلاسة إذا ضاقت المساحة */
+  .transactions-card {
+    overflow-x: auto;
+  }
+}
+
+/* للهواتف والشاشات الصغيرة (Mobile - أقل من 768px) */
+@media (max-width: 768px) {
+  /* جعل المحتوى الرئيسي يتسع للهاتف مع هوامش مريحة */
+  .main-content {
+    padding: 12px;
+  }
+
+  /* شبكة الفواتير الأربعة: جعلها كارتين في السطر بدلاً من أربعة متلاصقة */
+  .bills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .bill-item {
+    width: calc(50% - 6px);
+  }
+
+  /* تقليل حشو خلايا الجدول قليلاً ليتناسب مع شاشة الهاتف */
+  .transactions-table th,
+  .transactions-table td {
+    padding: 8px 6px;
+    font-size: 11px;
+  }
+
+  .category-tag {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
