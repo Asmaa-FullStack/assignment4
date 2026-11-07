@@ -794,7 +794,7 @@ body {
 /* 3. العمود الأيسر (الكروت البنكية الدوارة) - ارتفاعه مساوٍ للأوسط */
 .cards-wallet-col {
   flex: 1;
-  height: 580px;
+  height: auto;
   /* overflow: hidden; */
   display: flex;
   flex-direction: column;
@@ -805,6 +805,8 @@ body {
   flex-direction: column;
   gap: 16px;
   margin-top: 10px;
+  margin-top: 10px;
+  height: fit-content;
 }
 
 /* بنية دوران الكارت حول محور Y ثلاثي الأبعاد */
@@ -944,6 +946,72 @@ border-radius: 8px;
   object-fit: contain;
   /* border-radius: 12px; */
   display: block;
+}
+
+/* 1. مساحة المنظور ثلاثي الأبعاد */
+.card-scene {
+  width: 320px;
+  height: 180px; /* أو 190px بحسب أبعاد صور الكروت الأصلية */
+  margin: 10px auto; /* 12 بكسل فقط كافية جداً لفصل الكروت بأناقة */
+  perspective: 1000px;
+}
+
+/* 2. الصندوق الدوار */
+.card-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+  cursor: pointer;
+}
+
+/* 3. الدوران عند وقوف الماوس */
+.card-scene:hover .card-flipper {
+  transform: rotateY(180deg);
+}
+
+/* 4. الخصائص المشتركة للوجهين وخلفيات الصور */
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 5. صورة وجه البطاقة */
+.card-front {
+  background-image: url('../images/p1.jpeg'); ضعي اسم ملف صورة الوش
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* 6. صورة ظهر البطاقة */
+.card-back {
+  background-image: url('../images/pb1.jpeg'); /* ضعي اسم ملف صورة الظهر */
+  transform: rotateY(180deg);
+}
+/* البطاقة الثانية */
+.card-2-front {
+  background-image: url('../images/p2.jpeg');
+}
+.card-2-back {
+  background-image: url('../images/pb2.jpeg');
+}
+
+/* البطاقة الثالثة */
+.card-3-front {
+  background-image: url('../images/p3.jpeg');
+}
+.card-3-back {
+  background-image: url('../images/pb3.jpeg');
 }
 
 /* ===================================================
