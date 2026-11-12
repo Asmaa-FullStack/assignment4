@@ -1,67 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <aside class="sidebar">
-  <div class="logo">
-    <div class="logo-icon-box">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar"></div>
+     <aside class="sidebar">
+     <div class="logo">
+     <div class="logo-icon-box">
       <img src="./images/coins-solid-full.png" alt="شعار مدبّر">
-    </div>
-    <div class="logo-text">
+     </div>
+     <div class="logo-text">
       <h2>مدبّر</h2>
       <p>إدارة أموالك بذكاء</p>
-    </div>
+     </div>
+     </div>
+     <nav class="sidebar-menu">
+     <div class="menu-item active">
+     <img src="./images/house-solid-full.png" alt="الرئيسية" class="menu-icon">
+     <span>الصفحة الرئيسية</span>
+     </div>
+     <div class="menu-item">
+     <img src="./images/arrow-right-arrow-left-solid-full.png" alt="المعاملات المالية" class="menu-icon">
+     <span>المعاملات المالية</span>
+     </div>
+     <div class="menu-item">
+      <img src="./images/chart-pie-solid-full.png" alt="الميزانيات" class="menu-icon">
+     <span>الميزانيات</span>
+     </div>
+     <div class="menu-item">
+            <img src="./images/piggy-bank-solid.png" alt="المدخرات" class="menu-icon">
+     <span>المدخرات</span>
+     </div>
+     <h2 class="menu-title">إجراءات سريعة</h2>
+     <div class="menu-item">
+     <img src="./images/paper-plane-solid-full.png" alt="إرسال أموال" class="menu-icon">
+     <span>إرسال أموال </span>
+     </div>
+     <div class="menu-item">
+     <img src="./images/plus-solid-full.png" alt="إضافة أموال" class="menu-icon">
+      <span>إضافة أموال </span>
+     </div>
+     <div class="menu-item">
+     <img src="./images/receipt-solid-full.png" alt="دفع فاتورة" class="menu-icon">
+     <span>دفع فاتورة </span>
+     </div>
+     <div class="menu-item">
+     <img src="./images/chart-line-solid-full.png" alt="إستثمار" class="menu-icon">
+     <span>إستثمار </span>
+     </div>
+     </nav>
+     </aside>
   </div>
-  <!-- قائمة التنقل -->
-<nav class="sidebar-menu">
-  <div class="menu-item active">
-    <img src="./images/house-solid-full.png" alt="الرئيسية" class="menu-icon">
-    <span>الصفحة الرئيسية</span>
-  </div>
-  <div class="menu-item">
-  <img src="./images/arrow-right-arrow-left-solid-full.png" alt="المعاملات المالية" class="menu-icon">
-  <span>المعاملات المالية</span>
-</div>
-<div class="menu-item">
-  <img src="./images/chart-pie-solid-full.png" alt="الميزانيات" class="menu-icon">
-  <span>الميزانيات</span>
-</div>
-<div class="menu-item">
-  <img src="./images/piggy-bank-solid.png" alt="المدخرات" class="menu-icon">
-  <span>المدخرات</span>
-</div>
-<h2 class="menu-title">إجراءات سريعة</h2>
-<div class="menu-item">
-  <img src="./images/paper-plane-solid-full.png" alt="إرسال أموال" class="menu-icon">
-  <span>إرسال أموال </span>
-</div>
-<div class="menu-item">
-  <img src="./images/plus-solid-full.png" alt="إضافة أموال" class="menu-icon">
-  <span>إضافة أموال </span>
-</div>
-<div class="menu-item">
-  <img src="./images/receipt-solid-full.png" alt="دفع فاتورة" class="menu-icon">
-  <span>دفع فاتورة </span>
-</div>
-<div class="menu-item">
-  <img src="./images/chart-line-solid-full.png" alt="إستثمار" class="menu-icon">
-  <span>إستثمار </span>
-</div>
-</nav>
-    </aside>
-     <!-- الشريط العلوي هنا بجوار السايد بار -->
-      <!-- الشريط العلوي -->
-     <div class="main-content">
-        <header class="top-navbar">
+
+    <div class="page-layout">
+  
+  <div class="main-grid">
+    <div class="dashboard-grid">
+  <div class="item-1">
+    <header class="top-navbar">
     
-    <!-- الطرف الأيمن: الشعار وحالة الاتصال -->
     <div class="header-right">
       <div class="header-title-box">
         <img src="images/coins-solid-full.png" alt="شعار مدبر" class="header-icon">
@@ -77,20 +81,16 @@
       </div>
     </div>
 
-    <!-- الطرف الأيسر: نسخة واحدة فقط من البحث والإشعارات والمستخدم -->
     <div class="header-left">
-      <!-- أيقونة البحث -->
       <div class="header-action-btn">
         <img src="images/magnifying-glass-solid-full.png" alt="بحث" class="action-icon">
       </div>
 
-      <!-- أيقونة الإشعارات مع الرقم -->
       <div class="header-action-btn notification-box">
         <img src="./images/bell-regular-full.png" alt="الإشعارات" class="action-icon">
         <span class="badge">2</span>
       </div>
 
-      <!-- الملف الشخصي للمستخدم -->
       <div class="user-profile">
         <div class="user-info">
           <span class="user-name">سيف أسامة</span>
@@ -99,91 +99,73 @@
         <img src="./images/avatar-1.jpg" alt="المستخدم" class="user-avatar">
       </div>
     </div>
-  </header>
-   <!-- منطقة المحتوى التي تحوي الكروت -->
-    <div class="dashboard-body">
+        </header>
+  </div>
 
-      <!-- الحاوية الكبيرة للكروت الثلاثة -->
-      <div class="cards-grid">
-        
-        <!-- الكارت 1: الرصيد الحالي -->
-        <div class="stat-card">
+  <div class="item-2">
+   <div class="stat-card">
           <span class="card-title">الرصيد الحالي</span>
           <h2 class="card-value">8,450 جنية</h2>
           <span class="card-trend trend-up">&uarr; +2.5%</span>
         </div>
+  </div>
 
-        <!-- الكارت 2: الدخل -->
-        <div class="stat-card">
+  <div class="item-3">
+     <div class="stat-card">
           <span class="card-title">الدخل</span>
           <h2 class="card-value">15,000 جنية</h2>
           <span class="card-trend trend-up">&uarr; +8.2%</span>
         </div>
+  </div>
 
-        <!-- الكارت 3: المصروفات -->
-        <div class="stat-card">
+  <div class="item-4">
+    <div class="stat-card">
           <span class="card-title">المصروفات</span>
           <h2 class="card-value">10,000 جنية</h2>
           <span class="card-trend trend-down">&darr; -1.2%</span>
         </div>
 
-      </div>
+  </div>
 
-    </div>
-
-<!-- الحاوية السفلية الكبيرة التي تقسم المساحة لثلث وثلثين -->
-<div class="content-row">
-
-  <!-- 1. العمود الأيمن (الثلث): يحتوي على بطاقتين فوق بعض -->
-  <div class="right-column">
-
-    <!-- البطاقة العلوية: الأنشطة الحديثة -->
-    <div class="card recent-activities-card">
+  <div class="item-5">
+     <div class="card recent-activities-card">
       <div class="card-header">
         <h3 class="card-title">الأنشطة الحديثة</h3>
       </div>
       <div class="activity-items">
-        <!-- نشاط 1: حساب -->
-        <!-- نشاط 1: حساب -->
         <div class="activity-item activity-blue">
-          <!-- 1. صندوق الأيقونة أولاً (ليأتي في أقصى اليمين) -->
           <div class="activity-icon-box icon-box-blue">
             <img src="./images/user-plus-solid-full.png" alt="حساب" class="activity-icon">
           </div>
 
-          <!-- 2. النصوص بمفردها في المنتصف -->
           <div class="activity-details">
             <h4 class="activity-title">إنشاء حساب توفير جديد</h4>
             <p class="activity-desc">تم إنشاء حساب توفير بنك الأهلي بنجاح</p>
             <span class="activity-time">منذ ساعة واحدة</span>
           </div>
 
-          <!-- 3. شارة التصنيف في النهاية (لتذهب لأقصى اليسار) -->
           <div class="activity-badge">حساب</div>
           </div>
-          <!-- نشاط 2: بطاقة جديدة -->
           <div class="activity-item activity-green">
-            <!-- 1. الأيقونة في أقصى اليمين -->
               <div class="activity-icon-box icon-box-green">
                 <img src="./images/credit-card-solid-full-green.png" alt="بطاقة" class="activity-icon">
               </div>
 
-               <!-- 2. النصوص في المنتصف -->
                <div class="activity-details">
                    <h4 class="activity-title">إضافة بطاقة جديدة</h4>
                    <p class="activity-desc">تمت إضافة بطاقة Visa الجديدة **** 2847</p>
                    <span class="activity-time">منذ 3 ساعات</span>
                 </div>
 
-        <!-- 3. الشارة في أقصى اليسار -->
        <div class="activity-badge">بطاقة</div>
       </div>
       </div>
       <a href="#" class="activities-link">عرض جميع الأنشطة (23)</a>
     </div>
+  </div> 
 
-    <!-- البطاقة السفلية: الفواتير الشهرية -->
-    <div class="card bills-card">
+  <div class="item-6">
+      <div class="card bills-card">
       <div class="card-header">
         <h3 class="card-title">الفواتير الشهرية</h3>
         <a href="#" class="view-all-link">عرض الكل &gt;</a>
@@ -193,7 +175,6 @@
         <span class="total-label">إجمالي الفواتير الشهرية</span>
       </div>
 
-      <!-- شبكة الفواتير الأربعة -->
       <div class="bills-grid">
         <div class="bill-item">
           <span class="bill-icon">
@@ -231,22 +212,19 @@
           <div class="bill-due">يستحق في 15 يوم</div>
         </div>
       </div>
-    </div>
+    </div>  
   </div>
-  
 
-  <!-- 2. العمود الأيسر (الثلثين): بطاقة المعاملات الأخيرة -->
-  <div class="left-column">
+  <div class="item-7">
+        <div class="left-column">
     <div class="card transactions-card">
       <div class="card-header">
         <h3 class="card-title">المعاملات الأخيرة</h3>
         <a href="#" class="view-all-link">عرض الكل &gt;</a>
       </div>
 
-      <!-- جدول المعاملات -->
     <table class="transactions-table">
       <tbody>
-        <!-- صف العناوببن -->
           <tr class="table-header-row">
             
               <th>المعاملة</th>
@@ -256,7 +234,6 @@
               <th> المبلغ</th>
           </tr>
 
-        <!-- 1. محمود النجار -->
         <tr>
           <td class="user-cell">
             <img src="./images/avatar-2.jpg" alt="محمود النجار" class="avatar-sm">
@@ -273,7 +250,6 @@
           <td class="amount-text amount-positive">+350 جنية</td>
         </tr>
 
-        <!-- 2. مطعم Meat moot -->
         <tr>
           <td class="user-cell">
             <div class="service-icon icon-food">
@@ -292,7 +268,6 @@
           <td class="amount-text amount-negative">-2200 جنية</td>
         </tr>
 
-        <!-- 3. مشتريات Amazon -->
         <tr>
           <td class="user-cell">
             <span class="service-icon icon-food">
@@ -311,7 +286,6 @@
           <td class="amount-text amount-negative">-1250 جنية</td>
         </tr>
 
-        <!-- 4. عمر المهدي -->
         <tr>
           <td class="user-cell">
             <img src="./images/avatar-1.jpg" alt="عمر المهدي" class="avatar-sm">
@@ -328,7 +302,6 @@
           <td class="amount-text amount-negative">-1400 جنية</td>
         </tr>
 
-        <!-- 5. محمد عوض -->
         <tr>
           <td class="user-cell">
             <img src="./images/avatar-3.jpg" alt="محمد عوض" class="avatar-sm">
@@ -344,7 +317,6 @@
           <td class="amount-text amount-positive">+2500 جنية</td>
         </tr>
 
-        <!-- 6. محطة وقود Shell -->
         <tr>
           <td class="user-cell">
             <span class="service-icon icon-transport">
@@ -362,7 +334,6 @@
           <td class="amount-text amount-negative">-700 جنية</td>
         </tr>
 
-        <!-- 7. اشتراك Netflix -->
         <tr>
           <td class="user-cell">
             <span class="service-icon icon-entertainment">
@@ -381,7 +352,6 @@
           <td class="amount-text amount-negative">-780 جنية</td>
         </tr>
 
-        <!-- 8. نادي FitLife -->
         <tr>
           <td class="user-cell">
             <span class="service-icon icon-health">
@@ -399,7 +369,6 @@
           <td class="amount-text amount-negative">-500 جنية</td>
         </tr>
 
-        <!-- 9. كورس Jonas -->
         <tr>
           <td class="user-cell">
             <span class="service-icon icon-education">
@@ -421,15 +390,11 @@
       </tbody>
       </table>
     </div>
+  </div>  
   </div>
-</div>
- 
 
-<!-- الصف الثالث: الميزانية، الإحصائيات بالوسط، والكروت الدوارة باليسار -->
-<div class="bottom-dashboard-row">
-
-  <!-- 1. العمود الأيمن: نظرة عامة على الميزانية (الطويلة) -->
-  <div class="card budget-overview-col">
+  <div class="item-8">
+      <div class="card budget-overview-col">
     <div class="card-header">
       <h3 class="card-title">نظرة عامة على الميزانية</h3>
       <a href="#" class="view-all-link">التفاصيل &gt;</a>
@@ -447,7 +412,6 @@
       </div>
     </div>
 
-    <!-- بنود تفصيلية لملء المساحة الرأسية -->
     <div class="budget-categories-list">
       <div class="category-budget-item">
         <div class="cat-info">
@@ -474,24 +438,22 @@
       </div>
     </div>
   </div>
+  </div>
 
-  <!-- 2. العمود الأوسط: ديفين فوق بعض (الدخل مقابل المصروفات + ملخص الحساب) -->
-  <div class="middle-col">
-    <!-- الديف العلوي: الدخل مقابل المصروفات -->
-    <div class="card income-expense-card">
+  <div class="item-9">
+           <div class="card income-expense-card">
       <div class="card-header">
         <h3 class="card-title">الدخل مقابل المصروفات</h3>
         <span class="view-all-link">التحليل &gt;</span>
       </div>
-      <!-- تمثيل بياني بسيط بالأعمدة -->
       <div class="chart-bars-wrap">
         <img src="./images/الرسم البياني.jpeg" alt="الرسم البياني" class="custum-chart-img">
         </div>
       </div>
-    
+  </div>
 
-    <!-- الديف السفلي: ملخص الحساب -->
-    <div class="card account-summary-card">
+  <div class="item-10">
+           <div class="card account-summary-card">
       <div class="card-header">
         <h3 class="card-title">ملخص الحساب</h3>
       </div>
@@ -507,41 +469,42 @@
       </div>
     </div>
   </div>
+   
+  <div class="item-11">
+       <div class="card cards-wallet-col">
+       <div class="card-header">
+        <h3 class="card-title">وسائل الدفع</h3>
+       <span class="view-all-link">إدارة &gt;</span>
+       </div>
 
-  <!-- 3. العمود الأيسر: 3 كروت بنكية تدور حول محور Y -->
-  <div class="card cards-wallet-col">
-    <div class="card-header">
-      <h3 class="card-title">وسائل الدفع</h3>
-      <span class="view-all-link">إدارة &gt;</span>
+        <div class="flip-cards-container">
+      
+        <div class="card-scene">
+       <div class="card-flipper">
+       <div class="card-face card-front"></div>
+       <div class="card-face card-back"></div>
+       </div>
+       </div>
+
+        <div class="card-scene">
+       <div class="card-flipper">
+       <div class="card-face card-front card-2-front"></div>
+       <div class="card-face card-back card-2-back"></div>
+       </div>
+       </div>
+
+        <div class="card-scene">
+       <div class="card-flipper">
+        <div class="card-face card-front card-3-front"></div>
+       <div class="card-face card-back card-3-back"></div>
+       </div>
+       </div>
     </div>
-
-    <div class="flip-cards-container">
-      
-        <!-- الكارت الأول: فيزا زرقاء -->
-        <div class="card-scene">
-   <div class="card-flipper">
-    <div class="card-face card-front"></div>
-    <div class="card-face card-back"></div>
-   </div>
   </div>
 
-        <!-- الكارت الثاني: بطاقة بنفسجية / ماستركارد -->
-        <div class="card-scene">
-  <div class="card-flipper">
-    <div class="card-face card-front card-2-front"></div>
-    <div class="card-face card-back card-2-back"></div>
-  </div>
+  <div class="item-12"></div>
 </div>
 
-        <!-- الكارت الثالث: بطاقة بايبال / ميزة -->
-        <div class="card-scene">
-  <div class="card-flipper">
-    <div class="card-face card-front card-3-front"></div>
-    <div class="card-face card-back card-3-back"></div>
-  </div>
-</div>
-      
-    
-     </div>
-    </body>
+ 
+</body>
 </html>
